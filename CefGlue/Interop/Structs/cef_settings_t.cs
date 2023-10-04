@@ -34,6 +34,7 @@ namespace Xilium.CefGlue.Interop
         public cef_string_t locale;
         public cef_string_t log_file;
         public CefLogSeverity log_severity;
+        public CefLogItems log_items;
         public cef_string_t javascript_flags;
         public cef_string_t resources_dir_path;
         public cef_string_t locales_dir_path;

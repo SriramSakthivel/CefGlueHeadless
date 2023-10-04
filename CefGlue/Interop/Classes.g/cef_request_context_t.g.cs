@@ -219,25 +219,25 @@ namespace Xilium.CefGlue.Interop
         #if !DEBUG
         [SuppressUnmanagedCodeSecurity]
         #endif
-        private delegate cef_value_t* get_website_setting_delegate(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingType content_type);
+        private delegate cef_value_t* get_website_setting_delegate(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingTypes content_type);
         
         [UnmanagedFunctionPointer(libcef.CEF_CALLBACK)]
         #if !DEBUG
         [SuppressUnmanagedCodeSecurity]
         #endif
-        private delegate void set_website_setting_delegate(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingType content_type, cef_value_t* value);
+        private delegate void set_website_setting_delegate(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingTypes content_type, cef_value_t* value);
         
         [UnmanagedFunctionPointer(libcef.CEF_CALLBACK)]
         #if !DEBUG
         [SuppressUnmanagedCodeSecurity]
         #endif
-        private delegate CefContentSettingValue get_content_setting_delegate(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingType content_type);
+        private delegate CefContentSettingValues get_content_setting_delegate(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingTypes content_type);
         
         [UnmanagedFunctionPointer(libcef.CEF_CALLBACK)]
         #if !DEBUG
         [SuppressUnmanagedCodeSecurity]
         #endif
-        private delegate void set_content_setting_delegate(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingType content_type, CefContentSettingValue value);
+        private delegate void set_content_setting_delegate(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingTypes content_type, CefContentSettingValues value);
         
         // AddRef
         private static IntPtr _p0;
@@ -702,7 +702,7 @@ namespace Xilium.CefGlue.Interop
         private static IntPtr _p1b;
         private static get_website_setting_delegate _d1b;
         
-        public static cef_value_t* get_website_setting(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingType content_type)
+        public static cef_value_t* get_website_setting(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingTypes content_type)
         {
             get_website_setting_delegate d;
             var p = self->_get_website_setting;
@@ -719,7 +719,7 @@ namespace Xilium.CefGlue.Interop
         private static IntPtr _p1c;
         private static set_website_setting_delegate _d1c;
         
-        public static void set_website_setting(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingType content_type, cef_value_t* value)
+        public static void set_website_setting(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingTypes content_type, cef_value_t* value)
         {
             set_website_setting_delegate d;
             var p = self->_set_website_setting;
@@ -736,7 +736,7 @@ namespace Xilium.CefGlue.Interop
         private static IntPtr _p1d;
         private static get_content_setting_delegate _d1d;
         
-        public static CefContentSettingValue get_content_setting(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingType content_type)
+        public static CefContentSettingValues get_content_setting(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingTypes content_type)
         {
             get_content_setting_delegate d;
             var p = self->_get_content_setting;
@@ -753,7 +753,7 @@ namespace Xilium.CefGlue.Interop
         private static IntPtr _p1e;
         private static set_content_setting_delegate _d1e;
         
-        public static void set_content_setting(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingType content_type, CefContentSettingValue value)
+        public static void set_content_setting(cef_request_context_t* self, cef_string_t* requesting_url, cef_string_t* top_level_url, CefContentSettingTypes content_type, CefContentSettingValues value)
         {
             set_content_setting_delegate d;
             var p = self->_set_content_setting;

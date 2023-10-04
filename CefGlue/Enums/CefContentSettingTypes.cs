@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//
+// This file manually written from cef/include/internal/cef_types_content_settings.h.
+// C API name: cef_content_setting_types_t.
+//
 namespace Xilium.CefGlue
 {
+    using System;
+
     /// <summary>
     /// Supported content setting types. Some types are platform-specific or only
     /// supported with the Chrome runtime. Should be kept in sync with Chromium's
-    /// ContentSettingsType type. 
+    /// ContentSettingsType type.
     /// </summary>
-    public enum CefContentSettingType
+    public enum CefContentSettingTypes
     {
+        // This setting governs whether cookies are enabled by the user in the
+        /// provided context. However, it may be overridden by other settings. This
+        /// enum should NOT be read directly to determine whether cookies are enabled;
+        /// the client should instead rely on the CookieSettings API.
         Cookies = 0,
         Images,
         JavaScript,
@@ -22,13 +28,18 @@ namespace Xilium.CefGlue
         Geolocation,
         Notifications,
         AutoSelectCertificate,
-        Mixedcript,
-        MediastreamMic,
-        MediastreamCamera,
+        MixedScript,
+        MediaStreamMic,
+        MediaStreamCamera,
         ProtocolHandlers,
         DeprecatedPpapiBroker,
         AutomaticDownloads,
-        MidiSysex,
+
+        /// Advanced device-specific functions on MIDI devices. MIDI-SysEx
+        /// communications can be used for changing the MIDI device's persistent state
+        /// such as firmware.
+        MidiSysEx,
+
         SslCertDecisions,
         ProtectedMediaIdentifier,
         AppBanner,
@@ -39,16 +50,17 @@ namespace Xilium.CefGlue
         BackgroundSync,
         Autoplay,
         ImportantSiteInfo,
-        PermissionAutoblockerData,
+        PermissionAutoBlockerData,
         Ads,
 
         /// Website setting which stores metadata for the subresource filter to aid in
         /// decisions for whether or not to show the UI.
         AdsData,
 
-        /// This is special-cased in the permissions layer to always allow, and as
-        /// such doesn't have associated prefs data.
-        MIDI,
+        /// MIDI stands for Musical Instrument Digital Interface. It is a standard
+        /// that allows electronic musical instruments, computers, and other devices
+        /// to communicate with each other.
+        Midi,
 
         /// This content setting type is for caching password protection service's
         /// verdicts of each origin.
@@ -102,9 +114,6 @@ namespace Xilium.CefGlue
         /// Used to store whether to allow a website to detect user active/idle state.
         IdleDetection,
 
-        /// Setting for enabling auto-select of all screens for getDisplayMediaSet.
-        GetDisplayMediaSetSelectAllScreens,
-
         /// Content settings for access to serial ports. The "guard" content setting
         /// stores whether to allow sites to ask for permission to access a port. The
         /// permissions granted to access particular ports are stored in the "chooser
@@ -153,7 +162,7 @@ namespace Xilium.CefGlue
 
         /// Used to store whether to allow a website to exchange data with NFC
         /// devices.
-        NFC,
+        Nfc,
 
         /// Website setting to store permissions granted to access particular
         /// Bluetooth devices.
@@ -196,10 +205,11 @@ namespace Xilium.CefGlue
         /// screens. See also: https://w3c.github.io/window-placement
         WindowManagement,
 
-        /// Stores whether to allow insecure websites to make local network requests.
-        /// See also: https://wicg.github.io/local-network-access
+        /// Stores whether to allow insecure websites to make private network
+        /// requests.
+        /// See also: https://wicg.github.io/cors-rfc1918
         /// Set through enterprise policies only.
-        InsecureLocalNetwork,
+        InsecurePrivateNetwork,
 
         /// Content setting which stores whether or not a site can access low-level
         /// locally installed font data using the Local Fonts Access API.
@@ -207,7 +217,7 @@ namespace Xilium.CefGlue
 
         /// Stores per-origin state for permission auto-revocation (for all permission
         /// types).
-        PermissionAutorevocationData,
+        PermissionAutoRevocationData,
 
         /// Stores per-origin state of the most recently selected directory for the
         /// use by the File System Access API.
@@ -229,7 +239,7 @@ namespace Xilium.CefGlue
         FederatedIdentitySharing,
 
         /// Whether to use the v8 optimized JIT for running JavaScript on the page.
-        JavascriptJit,
+        JavaScriptJit,
 
         /// Content setting which stores user decisions to allow loading a site over
         /// HTTP. Entries are added by hostname when a user bypasses the HTTPS-First
@@ -240,7 +250,7 @@ namespace Xilium.CefGlue
 
         /// Stores metadata related to form fill, such as e.g. whether user data was
         /// autofilled on a specific website.
-        FormfillMetadata,
+        FormFillMetadata,
 
         /// Setting to indicate that there is an active federated sign-in session
         /// between a specified relying party and a specified identity provider for
@@ -283,7 +293,7 @@ namespace Xilium.CefGlue
         /// Website setting which stores whether the browser has observed the user
         /// signing into an identity-provider based on observing the IdP-SignIn-Status
         /// HTTP header.
-        FederatedIdentitIdentityProviderSigninStatus,
+        FederatedIdentityIdentityProviderSignInStatus,
 
         /// Website setting which is used for UnusedSitePermissionsService to
         /// store revoked permissions of unused sites from unused site permissions
@@ -296,7 +306,7 @@ namespace Xilium.CefGlue
 
         /// Setting to indicate whether user has opted in to allowing auto re-authn
         /// via the FedCM API.
-        FederatedIdentityAutoReauthnPermission,
+        FederatedIdentityAutoReAuthNPermission,
 
         /// Website setting which stores whether the user has explicitly registered
         /// a website as an identity-provider.
@@ -313,6 +323,23 @@ namespace Xilium.CefGlue
         /// Used to indicate whether HTTPS-First Mode is enabled on the hostname.
         HttpsEnforced,
 
-        NumTypes,
+        /// Setting for enabling the `getAllScreensMedia` API. Spec link:
+        /// https://github.com/screen-share/capture-all-screens
+        AllScreenCapture,
+
+        /// Stores per origin metadata for cookie controls.
+        CookieControlsMetadata,
+
+        /// Content Setting for 3PC accesses granted via 3PC deprecation trial.
+        TpcdSupport,
+
+        /// Content setting used to indicate whether entering picture-in-picture
+        /// automatically should be enabled.
+        AutoPictureInPicture,
+
+        /// Content Setting for 3PC accesses granted by metadata delivered via the
+        /// component updater service. This type will only be used when
+        /// `net::features::kTpcdMetadataGrants` is enabled.
+        TpcdMetadataGrants,
     }
 }

@@ -31,12 +31,12 @@ c2cs_types = {
     'void': 'void',
     'char': 'byte',
     'int': 'int',
-    'int16': 'short',
-    'uint16': 'ushort',
-    'int32': 'int',
-    'uint32': 'uint',
-    'int64': 'long',
-    'uint64': 'ulong',
+    'int16_t': 'short',
+    'uint16_t': 'ushort',
+    'int32_t': 'int',
+    'uint32_t': 'uint',
+    'int64_t': 'long',
+    'uint64_t': 'ulong',
     'float': 'float',
     'double': 'double',
     'size_t': 'UIntPtr',
@@ -179,8 +179,8 @@ c2cs_enumtypes = {
     'cef_chrome_page_action_icon_type_t': 'CefChromePageActionIconType',
     'cef_chrome_toolbar_button_type_t': 'CefChromeToolbarButtonType',
     'cef_download_interrupt_reason_t': 'CefDownloadInterruptReason',
-    'cef_content_setting_types_t': 'CefContentSettingType',
-    'cef_content_setting_values_t': 'CefContentSettingValue'
+    'cef_content_setting_types_t': 'CefContentSettingTypes',
+    'cef_content_setting_values_t': 'CefContentSettingValues',
     }
 
 c2cs_structtypes = { }

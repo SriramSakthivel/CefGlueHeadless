@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//
+// This file manually written from cef/include/base/internal/cef_types.h.
+// C API name: cef_download_interrupt_reason_t.
+//
 namespace Xilium.CefGlue
 {
     /// <summary>
