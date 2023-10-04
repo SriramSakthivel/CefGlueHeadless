@@ -14,7 +14,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="CefObjectTracker.cs" />
     <Compile Include="CefRuntime.cs" />
     <Compile Include="CefRuntimePlatform.cs" />
     <Compile Include="Classes.Handlers\CefAccessibilityHandler.cs" />
