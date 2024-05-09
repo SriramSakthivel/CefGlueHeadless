@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Extensions\HeadlessBrowserExtensions.cs" />
+    <Compile Include="Handlers\HeadlessRequestHandler.cs" />
+    <Compile Include="Handlers\HeadlessResourceRequestHandler.cs" />
+    <Compile Include="Handlers\HeadlessDisplayHandler.cs" />
+    <Compile Include="Handlers\HeadlessDownloadHandler.cs" />
+    <Compile Include="Handlers\HeadlessLifeSpanHandler.cs" />
+    <Compile Include="Handlers\HeadlessLoadHandler.cs" />
+    <Compile Include="Handlers\HeadlessRenderHandler.cs" />
+    <Compile Include="Handlers\HeadlessResponseFilter.cs" />
+    <Compile Include="HeaderRequestClient.cs" />
+    <Compile Include="Headless.cs" />
+    <Compile Include="HeadlessApp.cs" />
+    <Compile Include="HeadlessBrowser.cs" />
+    <Compile Include="HeadlessCefClient.cs" />
+    <Compile Include="HeadlessResponse.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="StringVisitor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CefGlue\CefGlue.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 16.0.29102.190
+VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CefGlue", "CefGlue\CefGlue.csproj", "{703FF300-34B9-48D4-A5D6-E741F48D5F95}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CefGlue.Samples.WpfOsr", "CefGlue.Samples.WpfOsr\CefGlue.Samples.WpfOsr.csproj", "{8E758128-CA79-4533-963E-91A1BF0558FB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CefGlue.WPF", "CefGlue.WPF\CefGlue.WPF.csproj", "{447C6790-E36E-4A54-BFAC-06C92FFF4AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CefGlue.Headless", "CefGlue.Headless\CefGlue.Headless.csproj", "{32661EF8-8FE6-4E1A-8160-AD51304728AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{447C6790-E36E-4A54-BFAC-06C92FFF4AA3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{447C6790-E36E-4A54-BFAC-06C92FFF4AA3}.Release|x86.ActiveCfg = Release|Any CPU
 		{447C6790-E36E-4A54-BFAC-06C92FFF4AA3}.Release|x86.Build.0 = Release|Any CPU
+		{32661EF8-8FE6-4E1A-8160-AD51304728AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32661EF8-8FE6-4E1A-8160-AD51304728AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32661EF8-8FE6-4E1A-8160-AD51304728AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{32661EF8-8FE6-4E1A-8160-AD51304728AF}.Debug|x86.Build.0 = Debug|Any CPU
+		{32661EF8-8FE6-4E1A-8160-AD51304728AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32661EF8-8FE6-4E1A-8160-AD51304728AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32661EF8-8FE6-4E1A-8160-AD51304728AF}.Release|x86.ActiveCfg = Release|Any CPU
+		{32661EF8-8FE6-4E1A-8160-AD51304728AF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
