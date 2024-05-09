@@ -30,3 +30,7 @@
 
 # IDE: Xamarin Studio (MonoDevelop)
 *.userprefs
+
+
+CefGlue.Headless/cef_linux
+CefGlue.Headless/cef_windows

@@ -36,6 +36,7 @@ public static class Headless
             MultiThreadedMessageLoop = true,
             BackgroundColor = new CefColor(255, 255, 255, 255),
             CachePath = Path.GetFullPath("CefCache"),
+            WindowlessRenderingEnabled = true
         };
 
         // Start the browser process (a child process).

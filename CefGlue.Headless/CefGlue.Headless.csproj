@@ -23,16 +23,36 @@
     <Compile Include="HeadlessBrowser.cs" />
     <Compile Include="HeadlessCefClient.cs" />
     <Compile Include="HeadlessResponse.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="StringVisitor.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Readme.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IPCPipeline" Version="1.0.1" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CefGlue\CefGlue.csproj" />
   </ItemGroup>
+
+	<Target Name="CopyFiles" AfterTargets="AfterBuild;AfterPublish">
+		<ItemGroup>
+			<!-- Because this ItemGroup is inside the target, this will enumerate
+                 all files just before calling Copy. If the ItemGroup were outside
+                 the target , it would enumerate the files during evaluation, before
+                 the build starts, which may miss files created during the build. -->
+			<CefLinuxFiles Include="$(ProjectDir)cef_linux\**\*.*" />
+			<CefWindowsFiles Include="$(ProjectDir)cef_windows\*.*" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(CefLinuxFiles)" DestinationFolder="$(TargetDir)cef_linux\%(RecursiveDir)" />
+		<Copy SourceFiles="@(CefWindowsFiles)" DestinationFolder="$(TargetDir)cef_windows\%(RecursiveDir)" />
+	</Target>
 
 </Project>
